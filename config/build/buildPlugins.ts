@@ -18,6 +18,7 @@ export const buildPlugins = ({paths, isDev}:BuildOptions): webpack.WebpackPlugin
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(''),
             __PROJECT__: JSON.stringify('storybook')
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
