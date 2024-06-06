@@ -1,3 +1,3 @@
-import { lazy } from 'react'
+import React, { lazy } from 'react';
 
-export const MainPageAsync:React.LazyExoticComponent<React.FC> = lazy(() => import('./MainPage'))
+export const MainPageAsync:React.LazyExoticComponent<React.FC> = lazy(() => import('./MainPage'));
