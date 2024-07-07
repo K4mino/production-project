@@ -5,7 +5,8 @@ module.exports = {
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:i18next/recommended"
     ],
     "overrides": [
     ],
@@ -37,6 +38,7 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'import/prefer-default-export': 'off',
         'no-underscore-dangle': 'off',
+        'i18next/no-literal-string': ['error', {markupOnly: true}],
     },
     globals:{
         '__IS_DEV__': true
