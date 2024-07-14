@@ -1,7 +1,7 @@
 import './styles/index.scss';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar/ui/Sidebar/Sidebar';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import useTheme from './providers/ThemeProvider/lib/useTheme';
 import classNames from '../shared/lib/classNames/classNames';
 import { AppRouter } from './providers/router';
@@ -13,6 +13,10 @@ export enum Theme {
 
 const App = () => {
     const { theme } = useTheme();
+
+    useEffect(() => {
+        throw Error('Test error') 
+    },[])
 
     return (
         <div className={classNames('app', {}, [theme])}>
