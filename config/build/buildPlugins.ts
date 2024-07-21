@@ -3,6 +3,8 @@ import path from 'path';
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions, BuildPaths } from './types/config';
+import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
+
 
 export const buildPlugins = ({ paths, isDev }:BuildOptions): webpack.WebpackPluginInstance[] => [
     new HtmlWebpackPlugin({
@@ -19,4 +21,5 @@ export const buildPlugins = ({ paths, isDev }:BuildOptions): webpack.WebpackPlug
         __PROJECT__: JSON.stringify('storybook'),
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin({openAnalyzer: false}),
 ];
