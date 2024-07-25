@@ -3,11 +3,7 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb",
-        "plugin:i18next/recommended"
-    ],
+    "extends": ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
     "overrides": [
     ],
     "parser":'@typescript-eslint/parser',
