@@ -21,7 +21,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm install
-      - nae: Build prod
+      - name: Build prod
         run: npm run build:prod
       - name: Lint
         run: npm run lint:ts
