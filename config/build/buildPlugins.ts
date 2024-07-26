@@ -6,7 +6,8 @@ import { BuildOptions, BuildPaths } from './types/config';
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 
 
-export const buildPlugins = ({ paths, isDev }:BuildOptions): webpack.WebpackPluginInstance[] => [
+export const buildPlugins = ({ paths, isDev }:BuildOptions): webpack.WebpackPluginInstance[] => {
+const plugins = [
     new HtmlWebpackPlugin({
         template: paths.html,
     }),
@@ -20,6 +21,14 @@ export const buildPlugins = ({ paths, isDev }:BuildOptions): webpack.WebpackPlug
         __API__: JSON.stringify(''),
         __PROJECT__: JSON.stringify('storybook'),
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({openAnalyzer: false}),
 ];
+
+if(isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(new BundleAnalyzerPlugin({
+        openAnalyzer: false
+    }));
+}
+
+return plugins
+}
