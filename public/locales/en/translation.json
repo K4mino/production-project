@@ -4,5 +4,8 @@
     "Язык":"English",
     "Страница не найдена": "Page not found",
     "Произошла непредвиденная ошибка": "An unexpected error occurred",
-    "Обновить страницу": "Refresh page"
+    "Обновить страницу": "Refresh page",
+    "Короткий язык":"En",
+    "Главная":"Home",
+    "О нас":"About"
 }

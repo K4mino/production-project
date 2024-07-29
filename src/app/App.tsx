@@ -14,10 +14,6 @@ export enum Theme {
 const App = () => {
     const { theme } = useTheme();
 
-    useEffect(() => {
-        throw Error('Test error') 
-    },[])
-
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">

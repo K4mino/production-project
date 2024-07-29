@@ -6,8 +6,9 @@ import styles from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {
   className?: string;
+  short?: boolean;
 }
-const LangSwitcher: React.FC<LangSwitcherProps> = ({ className }) => {
+const LangSwitcher: React.FC<LangSwitcherProps> = ({ className,short }) => {
     const { t, i18n } = useTranslation();
 
     const handleTranslate = () => {
@@ -17,7 +18,7 @@ const LangSwitcher: React.FC<LangSwitcherProps> = ({ className }) => {
     return (
         <div className={classNames(styles.langSwitcher, {}, [className])}>
             <Button theme={ThemeButton.CLEAR} onClick={handleTranslate}>
-                {t('Язык')}
+                {t(short ? 'Короткий язык' : 'Язык')}
             </Button>
         </div>
     );
