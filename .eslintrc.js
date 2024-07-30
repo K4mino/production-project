@@ -16,7 +16,8 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "react-hooks",
     ],
     "rules": {
         indent: [2, 4],
@@ -35,6 +36,8 @@ module.exports = {
         'import/prefer-default-export': 'off',
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['error', {markupOnly: true}],
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     globals:{
         '__IS_DEV__': true
